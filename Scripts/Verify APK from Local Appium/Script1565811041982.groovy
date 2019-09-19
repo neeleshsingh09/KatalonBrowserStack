@@ -5,7 +5,10 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.configuration.RunConfiguration as RunConfiguration
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.util.internal.PathUtil as PathUtil
+import org.openqa.selenium.remote.DesiredCapabilities as DesiredCapabilities
+import io.appium.java_client.android.AndroidDriver as AndroidDriver
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
@@ -23,24 +26,28 @@ def appPath = PathUtil.relativeToAbsolutePath(GlobalVariable.G_AndroidApp, RunCo
 
 Mobile.startApplication(appPath, false)
 
-Mobile.comment('And he navigates the application to Activity form')
+Mobile.comment('And he navigates the application to Graphics form')
 
-Mobile.tap(findTestObject('Application/android.widget.TextView - App'), 10)
+Mobile.tap(findTestObject('Application/android.widget.TextView - Graphics'), GlobalVariable.G_Timeout)
 
-Mobile.tap(findTestObject('Application/App/android.widget.TextView-Activity'), 10)
+Mobile.comment('When he scroll to Xfermodes text')
 
-Mobile.comment('When he taps on the Custom Dialog button')
+Mobile.scrollToText('Xfermodes')
 
-Mobile.tap(findTestObject('Application/App/Activity/android.widget.TextView-Custom Dialog'), 10)
+Mobile.comment('Then the current screen should show Xfermodes text after scrolling')
 
-'Get displayed message on the dialog'
-def message = Mobile.getText(findTestObject('Application/App/Activity/Custom Dialog/android.widget.TextViewCustomDialog'), 
-    10)
+'Get item\'s label'
+def itemText = Mobile.getText(findTestObject('Application/Graphics/android.widget.TextView - Xfermodes'), GlobalVariable.G_Timeout)
 
-Mobile.comment('Then the correct dialog message should be displayed')
-
-Mobile.verifyEqual(message, 'Example of how you can use a custom Theme.Dialog theme to make an activity that looks like a customized dialog, here with an ugly frame.')
+Mobile.verifyEqual(itemText, 'Xfermodes')
 
 Mobile.closeApplication()
 
+Mobile.startApplication('D:\\Users\\TestUser\\Katalon Studio\\SampleTestMobile01.prj\\androidapp\\APIDemos.apk', true)
+
+Mobile.tap(findTestObject('android.widget.TextView3 - App'), 0)
+
+Mobile.pressBack()
+
+Mobile.closeApplication()
 

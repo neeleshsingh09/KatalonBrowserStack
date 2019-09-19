@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>Regression Tests</name>
+   <name>BrwserstackWithJenkins</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient></mailRecipient>
@@ -9,17 +9,11 @@
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
-   <testSuiteGuid>9c54801c-d57d-404c-be15-6c167ec3650a</testSuiteGuid>
+   <testSuiteGuid>cf09affe-8e5f-4156-a015-0a761f83cf68</testSuiteGuid>
    <testCaseLink>
-      <guid>9eb14078-21e6-435b-9587-31e88946038f</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
-      <testCaseId>Test Cases/VeryAPK from Browserstack Appium</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>bb594fd1-d00d-4a89-84a4-7a5675904a79</guid>
+      <guid>1611b274-8576-44fe-959b-93d30afd754d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Verify APK from Local Appium</testCaseId>
+      <testCaseId>Test Cases/VeryAPK from Browserstack Appium</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
